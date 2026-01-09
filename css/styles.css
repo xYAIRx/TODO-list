@@ -1,0 +1,464 @@
+/* ===================================
+   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   =================================== */
+:root {
+    /* Colors */
+    --color-primary: hsl(260, 100%, 65%);
+    --color-primary-dark: hsl(260, 100%, 55%);
+    --color-primary-light: hsl(260, 100%, 75%);
+    --color-secondary: hsl(320, 100%, 60%);
+    --color-accent: hsl(180, 100%, 50%);
+    
+    --color-bg-primary: hsl(230, 20%, 10%);
+    --color-bg-secondary: hsl(230, 20%, 15%);
+    --color-bg-card: hsla(230, 20%, 20%, 0.6);
+    
+    --color-text-primary: hsl(0, 0%, 95%);
+    --color-text-secondary: hsl(0, 0%, 70%);
+    --color-text-muted: hsl(0, 0%, 50%);
+    
+    --color-success: hsl(140, 70%, 55%);
+    --color-danger: hsl(0, 70%, 60%);
+    --color-warning: hsl(45, 100%, 60%);
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.5rem;
+    
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* Border Radius */
+    --radius-sm: 0.5rem;
+    --radius-md: 1rem;
+    --radius-lg: 1.5rem;
+    --radius-full: 9999px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 20px rgba(138, 43, 226, 0.3);
+    
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-base: 250ms ease-in-out;
+    --transition-slow: 350ms ease-in-out;
+}
+
+/* ===================================
+   RESET & BASE STYLES
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    background: linear-gradient(135deg, var(--color-bg-primary) 0%, hsl(260, 30%, 15%) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===================================
+   LAYOUT
+   =================================== */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+header {
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+    text-align: center;
+    background: linear-gradient(180deg, rgba(138, 43, 226, 0.1) 0%, transparent 100%);
+}
+
+header h1 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-xs);
+}
+
+header .subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-light);
+}
+
+main {
+    flex: 1;
+    padding: var(--spacing-lg) 0;
+}
+
+footer {
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    border-top: 1px solid hsla(0, 0%, 100%, 0.05);
+}
+
+/* ===================================
+   TASK INPUT SECTION
+   =================================== */
+.task-input-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.task-form {
+    display: flex;
+    gap: var(--spacing-sm);
+    background: var(--color-bg-card);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+    box-shadow: var(--shadow-md);
+}
+
+.task-input {
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-lg);
+    font-family: var(--font-family);
+    color: var(--color-text-primary);
+    background: var(--color-bg-secondary);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: all var(--transition-base);
+}
+
+.task-input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.task-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.2);
+}
+
+/* ===================================
+   BUTTONS
+   =================================== */
+.btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    font-family: var(--font-family);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    outline: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow), var(--shadow-md);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* ===================================
+   TASK CONTROLS
+   =================================== */
+.task-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.task-counter {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-xs);
+    background: var(--color-bg-card);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-full);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+}
+
+.task-counter .count {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary-light);
+}
+
+.task-counter .label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.filter-buttons {
+    display: flex;
+    gap: var(--spacing-xs);
+    background: var(--color-bg-card);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-full);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+}
+
+.filter-btn {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    font-family: var(--font-family);
+    color: var(--color-text-secondary);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.filter-btn:hover {
+    color: var(--color-text-primary);
+    background: hsla(0, 0%, 100%, 0.05);
+}
+
+.filter-btn.active {
+    color: white;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    box-shadow: var(--shadow-sm);
+}
+
+/* ===================================
+   TASK LIST
+   =================================== */
+.task-list-section {
+    position: relative;
+}
+
+.task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+    animation: slideIn var(--transition-base);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-item:hover {
+    border-color: hsla(0, 0%, 100%, 0.2);
+    box-shadow: var(--shadow-md);
+}
+
+.task-item.completed {
+    opacity: 0.6;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: var(--color-text-muted);
+}
+
+.task-item.hidden {
+    display: none;
+}
+
+/* Custom Checkbox */
+.task-checkbox {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--color-text-muted);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    position: relative;
+    transition: all var(--transition-base);
+    flex-shrink: 0;
+}
+
+.task-checkbox:hover {
+    border-color: var(--color-primary);
+}
+
+.task-checkbox:checked {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-color: var(--color-primary);
+}
+
+.task-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+}
+
+.task-text {
+    flex: 1;
+    font-size: var(--font-size-lg);
+    color: var(--color-text-primary);
+    word-break: break-word;
+}
+
+.task-delete {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    font-family: var(--font-family);
+    color: var(--color-danger);
+    background: hsla(0, 70%, 60%, 0.1);
+    border: 1px solid hsla(0, 70%, 60%, 0.3);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    flex-shrink: 0;
+}
+
+.task-delete:hover {
+    background: var(--color-danger);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ===================================
+   EMPTY STATE
+   =================================== */
+.empty-state {
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    color: var(--color-text-muted);
+}
+
+.empty-state.hidden {
+    display: none;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.5;
+}
+
+.empty-state p {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xs);
+}
+
+.empty-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    header .subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    .task-form {
+        flex-direction: column;
+    }
+    
+    .task-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-buttons {
+        justify-content: center;
+    }
+    
+    .task-counter {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --spacing-md: 1rem;
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+    }
+    
+    .task-text {
+        font-size: var(--font-size-base);
+    }
+    
+    .task-input {
+        font-size: var(--font-size-base);
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 900px;
+    }
+}
