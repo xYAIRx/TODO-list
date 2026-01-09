@@ -9,7 +9,7 @@ Una aplicación web moderna y elegante para gestionar tareas diarias, desarrolla
 
 ## 📋 Descripción
 
-TODO List es una aplicación web que permite a los usuarios organizar sus tareas de manera eficiente. Con un diseño moderno que incluye tema oscuro, efectos de glassmorfismo y animaciones suaves, la aplicación ofrece una experiencia de usuario premium mientras mantiene un código limpio y bien estructurado.
+TODO List es una aplicación web que permite a los usuarios organizar sus tareas de manera eficiente. Con un diseño moderno que incluye tema oscuro, la aplicación ofrece una experiencia de usuario premium mientras mantiene un código limpio y bien estructurado.
 
 ## ✨ Características
 
