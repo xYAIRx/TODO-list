@@ -143,10 +143,11 @@ Este proyecto utiliza Git para el control de versiones. Commits principales:
 
 ## 👨‍💻 Autor
 
-Desarrollado con ❤️ como prueba técnica de nivel intermedio.
+Desarrollado por Yair Barrios.
 
 ---
 
 **Fecha de desarrollo**: Enero 2026
 
 **Versión**: 1.0.0
+
