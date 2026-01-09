@@ -238,5 +238,6 @@ class TodoApp {
 // ===================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    new TodoApp();
+    const app = new TodoApp();
+    console.log('✅ TODO List App initialized successfully');
 });
